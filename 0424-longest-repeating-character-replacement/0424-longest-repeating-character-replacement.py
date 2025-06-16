@@ -12,6 +12,7 @@ class Solution:
             else:
                 char_count[s[left]] -= 1
                 left += 1
+        most_frequent = max(char_count.values())
         if right - left - most_frequent <= k:
             max_length = max(max_length, right - left)
         return max_length
