@@ -11,10 +11,13 @@ class Solution:
                     if asteroid > 0:
                         stack.append(asteroid)
                     else:
-                        while stack:
+                        while True:
                             if asteroid * stack[-1] < 0:
                                 if abs(asteroid) > abs(stack[-1]):
                                     stack.pop()
+                                    if not stack:
+                                        stack.append(asteroid)
+                                        break
                                 elif abs(asteroid) == abs(stack[-1]):
                                     stack.pop()
                                     break
