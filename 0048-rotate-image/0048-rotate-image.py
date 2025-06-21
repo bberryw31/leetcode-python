@@ -3,7 +3,16 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        n = len(matrix)
-        for i in range(math.ceil(n / 2)):
-            for j in range(i, n - i - 1):
-                matrix[j][n-1-i], matrix[n-1-i][n-1-j], matrix[n-1-j][i], matrix[i][j] = matrix[i][j], matrix[j][n-1-i], matrix[n-1-i][n-1-j], matrix[n-1-j][i]
+        for i in range(math.ceil(len(matrix) / 2)):
+            for j in range(i, len(matrix) - i - 1):
+                (
+                    matrix[j][len(matrix) - 1 - i],
+                    matrix[len(matrix) - 1 - i][len(matrix) - 1 - j],
+                    matrix[len(matrix) - 1 - j][i],
+                    matrix[i][j],
+                ) = (
+                    matrix[i][j],
+                    matrix[j][len(matrix) - 1 - i],
+                    matrix[len(matrix) - 1 - i][len(matrix) - 1 - j],
+                    matrix[len(matrix) - 1 - j][i],
+                )
