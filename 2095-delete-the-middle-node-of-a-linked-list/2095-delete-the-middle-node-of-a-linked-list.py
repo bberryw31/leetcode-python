@@ -8,10 +8,12 @@ class Solution:
         if not head:
             return head
         slow, fast = head, head
-        slow_previous = slow
+        slow_previous = None
         while fast and fast.next:
             slow_previous = slow
             slow = slow.next
             fast = fast.next.next
+        if slow_previous == None:
+            return slow.next
         slow_previous.next = slow.next
         return head
