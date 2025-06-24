@@ -3,7 +3,5 @@ class Solution:
         result = set()
         for i in range(len(nums)):
             if nums[i] == key:
-                for x in range(i - k, i + k + 1):
-                    if 0 <= x < len(nums):
-                        result.add(x)
+                result.update(range(max(0, i - k), min(len(nums), i + k + 1)))
         return list(result)
