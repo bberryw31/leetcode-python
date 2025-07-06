@@ -15,11 +15,9 @@ class Solution:
             if slow == fast:
                 start = head
                 meet = slow
-                while True:
-                    if meet == start:
-                        return start
-                    else:
-                        meet = meet.next
+                while meet != start:
+                    meet = meet.next
                     if meet == slow:
                         start = start.next
+                return start
         return
