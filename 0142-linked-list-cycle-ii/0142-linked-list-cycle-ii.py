@@ -13,11 +13,13 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
             if slow == fast:
-                start = head
-                meet = slow
-                while meet != start:
-                    meet = meet.next
-                    if meet == slow:
-                        start = start.next
-                return start
-        return
+                break
+        else:
+            return
+        start = head
+        meet = slow
+        while meet != start:
+            meet = meet.next
+            if meet == slow:
+                start = start.next
+        return start
