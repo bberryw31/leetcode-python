@@ -6,15 +6,13 @@ class Solution:
         queue = deque([])
         res = 0
         while max_heap or queue:
-            for task in queue:
-                task[1] -= 1
-            if queue and queue[0][1] < 0:
+            if queue and queue[0][1] < res:
                 heapq.heappush(max_heap, -queue.popleft()[0])
             if not max_heap:
                 res += 1
                 continue
             priority_task = -heapq.heappop(max_heap)
             if priority_task - 1 > 0:
-                queue.append([priority_task - 1, n])
+                queue.append([priority_task - 1, res + n])
             res += 1
         return res
