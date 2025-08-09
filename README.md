@@ -1,2 +1,2 @@
-# leetcode solutions
-Collection of LeetCode questions and solutions
+# leetcode solutions - python
+Collection of LeetCode questions and solutions using python
